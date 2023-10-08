@@ -21,7 +21,7 @@ class _PendingTasksState extends State<PendingTasks> {
   List<Task> _tasks = [];
   List<Task> _completedTasks = [];
 
-// Builds the widget.
+// Builds the widget for the pending tasks.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +41,8 @@ class _PendingTasksState extends State<PendingTasks> {
                 if (_tasks[index].completed) {
                   _completedTasks.add(_tasks[index]);
                   _tasks.removeAt(index);
+                  print(_completedTasks.length); // checking to see if tasks
+                  // are being added (attempting to debug my load error)
                 }
               });
             },

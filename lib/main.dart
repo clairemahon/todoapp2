@@ -7,6 +7,7 @@ void main() {
   runApp(const ToDoApp());
 }
 
+// The root widget of the app.
 class ToDoApp extends StatelessWidget {
   const ToDoApp({super.key});
 
