@@ -15,7 +15,7 @@ class ToDoApp extends StatelessWidget {
     final theme = ToDoAppTheme.light();
 
     return MaterialApp(
-      title: 'ToDoApp',
+      title: 'To Do App',
       theme: theme,
       home: const Home(),
     );

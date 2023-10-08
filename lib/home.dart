@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'completedTasks.dart';
-import 'pendingTasks.dart';
+import 'completed_tasks.dart';
+import 'pending_tasks.dart';
 import 'tasks.dart';
 import 'main.dart';
 
+// Home widget that displays the navigation rail and the current page.
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -11,6 +12,7 @@ class Home extends StatefulWidget {
   HomeState createState() => HomeState();
 }
 
+// Updates the selected index when the user interacts with the navigation rail.
 class HomeState extends State<Home> {
   var selectedIndex = 0;
 

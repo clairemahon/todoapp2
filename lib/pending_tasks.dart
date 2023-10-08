@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'tasks.dart';
+import 'completed_tasks.dart';
 
+/// A widget that displays a list of pending tasks.
+///
+/// This widget displays a list of tasks that are pending. It allows the user to
+/// mark a task as completed by checking the checkbox next to the task. The user
+/// can also view the details of a task by tapping on the task.
 class PendingTasks extends StatefulWidget {
   const PendingTasks({Key? key});
 
@@ -9,10 +15,13 @@ class PendingTasks extends StatefulWidget {
   _PendingTasksState createState() => _PendingTasksState();
 }
 
+// Shows the current state of the task list, allowing a user to add a new task,
+//update the task list, and mark tasks as completed.
 class _PendingTasksState extends State<PendingTasks> {
   List<Task> _tasks = [];
   List<Task> _completedTasks = [];
 
+// Builds the widget.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +56,7 @@ class _PendingTasksState extends State<PendingTasks> {
     );
   }
 
+// Shows a dialog that allows the user to add a new task.
   void _showAddTaskDialog(BuildContext context) {
     String title = '';
     String description = '';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// Task class that represents a task, including the title, description,
+// date and time, as well as whether the task is completed.
 class Task {
   final String title;
   final String description;
