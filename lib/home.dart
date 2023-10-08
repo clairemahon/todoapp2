@@ -23,7 +23,7 @@ class HomeState extends State<Home> {
         page = const PendingTasks();
         break;
       case 1:
-        page = const CompletedTasks(completedTasks: [], tasks: []);
+        page = const CompletedTasks();
         break;
       default:
         throw UnimplementedError('No page for index $selectedIndex ');

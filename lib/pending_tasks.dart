@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 import 'tasks.dart';
 import 'completed_tasks.dart';
+import 'tasks_list.dart';
 
 /// A widget that displays a list of pending tasks.
 ///
@@ -18,9 +19,6 @@ class PendingTasks extends StatefulWidget {
 // Shows the current state of the task list, allowing a user to add a new task,
 //update the task list, and mark tasks as completed.
 class _PendingTasksState extends State<PendingTasks> {
-  List<Task> _tasks = [];
-  List<Task> _completedTasks = [];
-
 // Builds the widget for the pending tasks.
   @override
   Widget build(BuildContext context) {
@@ -29,19 +27,19 @@ class _PendingTasksState extends State<PendingTasks> {
         title: Text('Pending Tasks'),
       ),
       body: ListView.builder(
-        itemCount: _tasks.length,
+        itemCount: tasks.length,
         itemBuilder: (BuildContext context, int index) {
           return CheckboxListTile(
-            title: Text(_tasks[index].title),
-            subtitle: Text(_tasks[index].description),
-            value: _tasks[index].completed,
+            title: Text(tasks[index].title),
+            subtitle: Text(tasks[index].description),
+            value: tasks[index].completed,
             onChanged: (bool? value) {
               setState(() {
-                _tasks[index].completed = value!;
-                if (_tasks[index].completed) {
-                  _completedTasks.add(_tasks[index]);
-                  _tasks.removeAt(index);
-                  print(_completedTasks.length); // checking to see if tasks
+                tasks[index].completed = value!;
+                if (tasks[index].completed) {
+                  completedTasks.add(tasks[index]);
+                  tasks.removeAt(index);
+                  print(completedTasks.length); // checking to see if tasks
                   // are being added (attempting to debug my load error)
                 }
               });
@@ -126,7 +124,7 @@ class _PendingTasksState extends State<PendingTasks> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  _tasks.add(Task(title, description, dateTime));
+                  tasks.add(Task(title, description, dateTime));
                 });
                 Navigator.pop(context);
               },
